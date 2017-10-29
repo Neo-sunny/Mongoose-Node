@@ -13,13 +13,11 @@ connect.then((db) => {
     
     console.log('Connected to the server Correctly....');
     
-    var newDish= Dishes({
+    Dishes.create({
         name: 'Uthapizza',
         description: 'test'
-    });
-    
-    newDish.save()
-        .then((dish) =>{
+    })
+    .then((dish) =>{
             console.log(dish);
         
         return Dishes.find({}).exec();
